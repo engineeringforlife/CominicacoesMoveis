@@ -1,0 +1,10 @@
+%openExample('comm/IndoorCommLinkUsingRayTracingExample')
+
+mapFileName = "conferenceroom.stl";
+
+%Define carrier frequency at 5.8 GHz and calculate wavelength
+fc = 5.8e9;
+lambda = physconst('lightspeed')/fc;
+
+txArray = arrayConfig("Size",[4 1],'ElementSpacing',2*lambda);
+rxArray = arrayConfig("Size",[4 4],'ElementSpacing',lambda);
